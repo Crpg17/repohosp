@@ -1,0 +1,32 @@
+<!-- usamos la metodologia bem para usar scss -->
+<div class="containerPersona">
+    <div class="containerPersona__sub">
+        <div class="containerPersona__sub--title">
+            <h1>Personas</h1>
+            <button (click)="openCreateModal()">Crear</button>
+        </div>
+        <div class="containerPersona__sub--table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Persona</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let persona of personas">
+                        <td><b>{{ persona.nombre }}</b></td>
+                        <td>{{ persona.ap_paterno }}</td>
+                        <td>{{ persona.ap_materno }}</td>
+                        <td>
+                            <button (click)="openEditModal(persona)">Edit</button>
+                            <button (click)="deletePersona(persona)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

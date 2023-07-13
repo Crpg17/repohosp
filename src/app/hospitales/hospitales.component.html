@@ -1,0 +1,35 @@
+<!-- usamos la metodologia bem para usar scss -->
+<div class="containerHospital">
+    <div class="containerHospital__sub">
+        <div class="containerHospital__sub--title">
+            <h1>Hospital</h1>
+            <button (click)="openCreateModal()">Crear</button>
+        </div>
+        <div class="containerHospital__sub--table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Hospital</th>
+                        <th>direccion</th>
+                        <th>ciudad</th>
+                        <th>Pais</th>
+                        <th>telefono</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let hospital of hospital">
+                        <td><b>{{ hospital.nombre }}</b></td>
+                        <td>{{ hospital.direccion }}</td>
+                        <td>{{ hospital.ciudad }}</td>
+                        <td>{{ hospital.pais}}</td>
+                        <td>{{ hospital.telefono}}</td>
+                        <td>
+                            <button (click)="openEditModal(hospital)">Edit</button>
+                            <button (click)="deleteHospital(hospital)">Delete</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

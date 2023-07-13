@@ -1,0 +1,36 @@
+<!-- componente del modal -->
+<!-- Titulo -->
+<h2 mat-dialog-title>{{ data.action === 'create' ? 'Crear' : 'Editar' }}</h2>
+<mat-dialog-content>
+  <!-- formulario -->
+  <form class="form" #hospitalForm="ngForm">
+    <!-- contenido -->
+    <div class="form__container">
+      <label class="form__container--label" for="">Nombre</label>
+      <input class="form__container--input" matInput placeholder="Nombre" [(ngModel)]="data.nombre" name="nombre" required>
+    </div>
+    <div class="form__container">
+      <label class="form__container--label" for="">Direccion</label>
+      <input class="form__container--input" matInput placeholder="Direccion" [(ngModel)]="data.direccion" name="direccion" required>
+    </div>
+    <div class="form__container">
+      <label class="form__container--label" for="">Ciudad</label>
+      <input class="form__container--input" matInput placeholder="Ciudad" [(ngModel)]="data.ciudad" name="ciudad" required>
+    </div>
+    <div class="form__container">
+      <label class="form__container--label" for="">Pais</label>
+      <input class="form__container--input" matInput placeholder="Pais" [(ngModel)]="data.pais" name="pais" required>
+    </div>
+    <div class="form__container">
+      <label class="form__container--label" for="">Telefono</label>
+      <input class="form__container--input" matInput placeholder="Telefono" [(ngModel)]="data.telefono" name="telefono" required>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <!-- botones -->
+  <div class="container__button">
+    <button class="container__button--button" mat-button [mat-dialog-close]="false">Cancelar</button>
+    <button class="container__button--button" mat-button [mat-dialog-close]="hospitalForm.valid && data">Guardar</button>
+  </div>
+</mat-dialog-actions>
